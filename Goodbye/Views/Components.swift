@@ -120,6 +120,59 @@ struct DayCell: View {
     }
 }
 
+/// Shows the queue rather than explaining it: a fortnight of due days, a few of them missed — and
+/// then the missed ones turn green.
+///
+/// That last part is the whole point. Nine of twenty testers met their first "14 in the queue"
+/// with no warning and read it as a bill; three of them lapsed over it. A sentence in onboarding
+/// wouldn't be read — nobody absorbs "missed days accumulate" before they've missed one — but
+/// first run is the one moment somebody is actually curious, and this can be watched instead.
+struct QueuePreview: View {
+    @State private var healed = false
+
+    private let count = 16
+    private let done = 5      // days you were there
+    private let heals = 3     // owed days that turn green while you watch
+    private let waiting = 2   // and the ones still owed at the end
+
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(0..<count, id: \.self) { index in
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .fill(fill(index))
+                    .overlay {
+                        if index >= done + heals + waiting {
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                .strokeBorder(Theme.line, lineWidth: 1.5)
+                        }
+                    }
+                    .frame(width: DayCell.size, height: DayCell.size)
+                    .animation(
+                        .easeInOut(duration: 0.45).delay(Double(index - done) * 0.14),
+                        value: healed
+                    )
+            }
+        }
+        .task {
+            // Let the screen settle first, so it reads as something happening rather than a glitch.
+            try? await Task.sleep(for: .milliseconds(900))
+            healed = true
+        }
+        .accessibilityElement()
+        .accessibilityLabel("Missed days wait for you, and clearing them fills them in.")
+    }
+
+    /// Two amber squares are left standing at the end on purpose. Healing every one of them meant
+    /// the strip settled into a solid row of green sitting under a caption about missing days —
+    /// a demonstration that contradicted its own label a second after it finished.
+    private func fill(_ index: Int) -> Color {
+        if index < done { return Theme.dayDone }
+        if index < done + heals { return healed ? Theme.dayDone : Theme.dayOwed }
+        if index < done + heals + waiting { return Theme.dayOwed }
+        return Theme.card
+    }
+}
+
 /// Six seconds to take it back. A satisfying toss needs a safe undo, or people toss carefully —
 /// and a careful gesture isn't a pleasant one. It's also the *only* way back now that the app keeps
 /// no list of what went, so it can't be brief.

@@ -25,50 +25,84 @@ struct OnboardingView: View {
     private var hue: Hue { Hue.forDay(Date(), calendar: store.calendar) }
 
     var body: some View {
+        // Adding the queue strip pushed the headline off the top at accessibility text sizes, so
+        // the screen scrolls when it has to. `minHeight` keeps the spacers doing their work — and
+        // the airy layout — whenever it fits, which is every ordinary text size.
+        GeometryReader { geo in
+            ScrollView {
+                content.frame(minHeight: geo.size.height)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+        }
+        .dailyWash(hue)
+    }
+
+    private var content: some View {
+        // Three groups, not five loose blocks. Every gap used to be the same size, so nothing read
+        // as belonging to anything — and the four rhythms were spread over a third of the screen
+        // even though they finish the sentence in the headline. Tight inside a group, generous
+        // between: that's the whole fix.
         VStack(alignment: .leading, spacing: 0) {
-            Text("One thing leaves your life…")
-                .font(Theme.sentence(.title))
-                .foregroundStyle(Theme.ink)
 
-            Text("Pick a rhythm. You can change it whenever.")
-                .font(Theme.text(.subheadline))
-                .foregroundStyle(Theme.muted)
-                .padding(.top, 8)
-
-            Spacer(minLength: 24)
-
+            // — the question, and the four ways to finish it
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(Rhythm.allCases) { option in
-                    rhythmRow(option)
+                Text("One thing leaves your life…")
+                    .font(Theme.sentence(.title))
+                    .foregroundStyle(Theme.ink)
+
+                Text("Pick a rhythm. You can change it whenever.")
+                    .font(Theme.text(.subheadline))
+                    .foregroundStyle(Theme.muted)
+                    .padding(.top, 6)
+
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(Rhythm.allCases) { option in
+                        rhythmRow(option)
+                    }
                 }
+                .padding(.top, 14)
             }
 
-            Spacer(minLength: 24)
+            // — what that choice actually means
+            VStack(alignment: .leading, spacing: 0) {
+                projection
 
-            projection
+                Text(rhythm.counsel)
+                    .font(Theme.text(.footnote))
+                    .foregroundStyle(Theme.muted)
+                    .frame(minHeight: 38, alignment: .top)
+                    .padding(.top, 6)
 
-            Text(rhythm.counsel)
-                .font(Theme.text(.footnote))
-                .foregroundStyle(Theme.muted)
-                .frame(minHeight: 42, alignment: .top)
-                .padding(.top, 8)
+                // The queue, demonstrated. Jakub's call, and the right one: first run is the
+                // moment somebody is curious enough to watch, and watching beats being told.
+                QueuePreview()
+                    .padding(.top, 12)
 
-            Spacer(minLength: 24)
-
-            reminderRow
-
-            HoldButton(title: "Hold to start", hue: hue) {
-                start()
+                Text("Miss a few days and they wait for you — clear them one at a time, or all at once.")
+                    .font(Theme.text(.footnote))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.top, 8)
             }
-            .padding(.top, 22)
+            .padding(.top, 30)
+
+            // All the slack goes here, in one place, rather than being split three ways — three
+            // distributed gaps is what made the screen feel like it was drifting apart.
+            Spacer(minLength: 26)
+
+            // — and the two things left to set
+            VStack(alignment: .leading, spacing: 0) {
+                reminderRow
+
+                HoldButton(title: "Hold to start", hue: hue) {
+                    start()
+                }
+                .padding(.top, 16)
+            }
         }
         .padding(.horizontal, 24)
-        .padding(.top, 4)
-        .padding(.bottom, 20)
-        // The blocks share the height rather than stacking at the top: the question breathes, and
-        // on a short phone the spacers give way before anything gets clipped.
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .dailyWash(hue)
+        .padding(.vertical, 16)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Pieces
@@ -90,7 +124,7 @@ struct OnboardingView: View {
                     .foregroundStyle(hue.deep)
                     .opacity(selected ? 1 : 0)
             }
-            .padding(.vertical, 11)
+            .padding(.vertical, 7)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
