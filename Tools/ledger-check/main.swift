@@ -129,5 +129,43 @@ expect("G big jump landing near does count", Tally.milestoneCrossed(before: 40, 
 expect("G big jump overshooting does not",
        Tally.milestoneCrossed(before: 40, after: 140) == nil ? 1 : 0, 1)
 
+// ---------- H. entries out of order in the array still process oldest-first ----------
+// Appended out of date order on purpose — Ledger.build sorts internally, so the result must be
+// identical to what you'd get from writing them in date order. If that internal sort is ever
+// "simplified" away, this scenario's numbers stop matching.
+let hEntries = [
+    Entry(date: day(2026, 8, 20), count: 5),   // appended first, dated later
+    Entry(date: day(2026, 7, 15), count: 15),  // appended second, dated earlier
+]
+let hl = Ledger.build(entries: hEntries, settings: s, today: today, calendar: cal)
+expect("H total is order-independent", hl.total, 20)
+expect("H covers 9 due days (Jul15's 15 can only reach Jul17, Aug20's 5 take it from there)", hl.pile, 31 - 9)
+expect("H extras (Jul15 overshoots its own reachable due days)", hl.extras, 11)
+
+// ---------- I. changing the rhythm mid-history recolours, but never loses, the total ----------
+var i = AppSettings()
+i.rhythm = .weekly
+i.startDate = day(2026, 7, 1)
+let iEntries = [Entry(date: day(2026, 7, 1), count: 1)]
+let iBefore = Ledger.build(entries: iEntries, settings: i, today: day(2026, 8, 1), calendar: cal)
+expect("I weekly due days by Aug 1", iBefore.dueDays.count, 5)
+expect("I weekly queue", iBefore.pile, 4)
+
+i.rhythm = .daily  // same entries, same start date — only the rhythm changes
+let iAfter = Ledger.build(entries: iEntries, settings: i, today: day(2026, 8, 1), calendar: cal)
+expect("I total survives a rhythm change", iAfter.total, iBefore.total)
+expect("I daily due days by Aug 1 (recoloured, not the same shape)", iAfter.dueDays.count, 32)
+expect("I queue recomputes for the new rhythm", iAfter.pile, 31)
+
+// ---------- J. a due-day count spanning a DST transition neither skips nor doubles a day ----------
+// Found dynamically from the real time zone data rather than a hard-coded date, so this keeps
+// working whichever year it's run in.
+let transition = cal.timeZone.nextDaylightSavingTimeTransition(after: day(2026, 1, 1))!
+let dstStart = cal.date(byAdding: .day, value: -2, to: cal.startOfDay(for: transition))!
+let dstEnd = cal.date(byAdding: .day, value: 2, to: cal.startOfDay(for: transition))!
+let dstDays = Rhythm.daily.dueDays(from: dstStart, through: dstEnd, calendar: cal)
+let dstExpected = cal.dateComponents([.day], from: cal.startOfDay(for: dstStart), to: cal.startOfDay(for: dstEnd)).day! + 1
+expect("J daily due days unaffected by the DST transition", dstDays.count, dstExpected)
+
 print(failures == 0 ? "\nall good" : "\n\(failures) failure(s)")
 exit(failures == 0 ? 0 : 1)

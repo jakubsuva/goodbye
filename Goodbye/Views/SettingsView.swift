@@ -21,7 +21,7 @@ struct SettingsView: View {
             }
 
             Section {
-                Toggle("Reminder", isOn: reminderToggle)
+                Toggle("Nudge", isOn: reminderToggle)
                 if store.settings.remindersOn {
                     DatePicker("Time", selection: reminderTime, displayedComponents: .hourAndMinute)
                 }
@@ -42,7 +42,7 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(Theme.bg.ignoresSafeArea())
+        .dailyWash(store.todayHue)
         .navigationTitle("Settings")
         .task {
             exportURL = try? store.exportURL()

@@ -126,8 +126,9 @@ final class Store {
         var settings: AppSettings
     }
 
-    static func load() -> Store {
-        let url = defaultFileURL()
+    /// `url` is injectable so tests can point at a temp file instead of the real Application
+    /// Support data — see Tools/store-check.
+    static func load(from url: URL = defaultFileURL()) -> Store {
         let store = Store(fileURL: url)
         if let data = try? Data(contentsOf: url),
            let snapshot = try? decoder.decode(Snapshot.self, from: data) {
@@ -163,7 +164,7 @@ final class Store {
         return url
     }
 
-    private static func defaultFileURL() -> URL {
+    nonisolated static func defaultFileURL() -> URL {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? FileManager.default.temporaryDirectory
         return base

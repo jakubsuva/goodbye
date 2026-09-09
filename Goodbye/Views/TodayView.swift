@@ -136,7 +136,8 @@ struct TodayView: View {
                 Image(systemName: "arrow.clockwise")
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(hue.deep)
-                    .padding(6)
+                    // The icon stays small; the tap target doesn't — 44pt is the HIG minimum.
+                    .frame(minWidth: 44, minHeight: 44)
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Another suggestion")

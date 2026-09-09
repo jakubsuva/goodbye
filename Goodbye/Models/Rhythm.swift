@@ -52,7 +52,7 @@ enum Rhythm: String, Codable, CaseIterable, Identifiable {
         case .daily: return "365 is a lot. Start slower — speeding up is easy, starting again isn't."
         case .everyOtherDay: return "Enough to notice. Rare enough to keep."
         case .twiceAWeek: return "Two evenings a week, always the same two."
-        case .weekly: return "Gentle. Sundays add up anyway."
+        case .weekly: return "Gentle. The same day each week adds up anyway."
         }
     }
 

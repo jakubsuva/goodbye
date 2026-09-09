@@ -244,8 +244,8 @@ struct HoldButton: View {
                 // and it's the first button anyone ever meets, sitting next to a fully vivid Gone
                 // pill on the next screen. Stronger tint plus a border: still clearly a track that
                 // fills, no longer greyed out.
-                Capsule().fill(hue.bright.opacity(0.3))
-                Capsule().strokeBorder(hue.bright, lineWidth: 2.5)
+                Capsule().fill(hue.bright.opacity(0.38))
+                Capsule().strokeBorder(hue.bright, lineWidth: 3)
                 GeometryReader { geo in
                     Capsule()
                         .fill(hue.bright)

@@ -23,9 +23,9 @@ enum Tally {
         case 10: return "Ten. It's a habit now."
         case 50: return "Fifty. That's a shelf you never have to dust."
         case 100: return "A hundred. The flat is lighter than the one you started in."
-        case 250: return "Two hundred and fifty."
+        case 250: return "Two hundred and fifty. A cupboard, cleared."
         case 500: return "Five hundred things you don't miss."
-        case 1000: return "A thousand."
+        case 1000: return "A thousand things, and not one you miss."
         default: return "\(milestone)."
         }
     }

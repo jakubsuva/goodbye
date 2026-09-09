@@ -76,8 +76,9 @@ enum Reminders {
     }
 
     /// One line, and for a single thing it borrows the day's suggestion — so the nudge arrives with
-    /// somewhere to start rather than just a demand.
-    private static func body(for pile: Int, day: Date, calendar: Calendar) -> String {
+    /// somewhere to start rather than just a demand. Internal (not private) so Tools/store-check
+    /// can exercise it directly without a real notification center.
+    static func body(for pile: Int, day: Date, calendar: Calendar) -> String {
         if pile == 1, let line = SuggestionBank.lines(for: day, calendar: calendar).first {
             return "One thing. How about \(line)?"
         }

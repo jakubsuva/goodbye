@@ -46,7 +46,7 @@ struct LogSeveralSheet: View {
                         Text(n == pile ? "All \(pile)" : "\(n)")
                             .font(Theme.text(.caption, .bold))
                             .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
+                            .padding(.vertical, 11)
                             .background(count == n ? hue.deep : Color.clear, in: Capsule())
                             .overlay(
                                 Capsule().strokeBorder(count == n ? hue.deep : Theme.line, lineWidth: 2)
