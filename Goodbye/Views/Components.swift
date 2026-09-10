@@ -32,6 +32,7 @@ struct PillButtonStyle: ButtonStyle {
 /// item, in the colour of the day. With a queue behind it, it becomes a stack.
 struct ItemCard: View {
     let hue: Hue
+    var symbol: ItemSymbol = .box
     var pile: Int = 1
     var size: CGFloat = 170
 
@@ -40,7 +41,7 @@ struct ItemCard: View {
             if pile > 2 { blank.offset(x: 18, y: -18).opacity(0.45) }
             if pile > 1 { blank.offset(x: 9, y: -9).opacity(0.7) }
             card.overlay {
-                Image(systemName: "shippingbox")
+                Image(systemName: symbol.systemName)
                     .font(.system(size: size * 0.36, weight: .regular))
                     .foregroundStyle(hue.deep)
             }
@@ -80,8 +81,7 @@ struct MetaRow: View {
 
     var body: some View {
         HStack {
-            Text(date, format: .dateTime.weekday(.wide).day().month(.wide)
-                .locale(Theme.dateLocale))
+            Text(date, format: .dateTime.weekday(.wide).day().month(.wide))
             Spacer()
             Text(rhythm.shortTitle)
         }
@@ -225,7 +225,10 @@ struct CaughtUpMark: View {
 /// Press and hold to commit. Wordless on purpose: no oath, nothing to feel guilty about later —
 /// just a gesture that costs a moment and therefore registers as a choice.
 struct HoldButton: View {
-    let title: String
+    // LocalizedStringKey, not String: a plain String handed to Text(_:)/accessibilityLabel(_:) is
+    // shown verbatim, never looked up in the string catalog. This keeps the call site's string
+    // literal ("Hold to start") going through the normal localization path.
+    let title: LocalizedStringKey
     let hue: Hue
     /// Shown under the pill at rest. Left nil in onboarding: small grey print directly beneath a
     /// commitment button is the shape of subscription fine print, whatever it actually says.
@@ -275,7 +278,7 @@ struct HoldButton: View {
             .accessibilityHint("Press and hold to begin")
             .accessibilityAction { action() }
 
-            Text(hint && !pressing ? "Hold it for a second." : (restingHint ?? " "))
+            Text(hint && !pressing ? String(localized: "Hold it for a second.") : (restingHint ?? " "))
                 .font(Theme.text(.caption2, .bold))
                 .foregroundStyle(Theme.muted)
                 .frame(maxWidth: .infinity)

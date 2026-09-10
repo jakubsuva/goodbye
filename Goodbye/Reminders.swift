@@ -80,9 +80,9 @@ enum Reminders {
     /// can exercise it directly without a real notification center.
     static func body(for pile: Int, day: Date, calendar: Calendar) -> String {
         if pile == 1, let line = SuggestionBank.lines(for: day, calendar: calendar).first {
-            return "One thing. How about \(line)?"
+            return String(localized: "One thing. How about \(line)?")
         }
-        if pile == 1 { return "One thing. Even a small one." }
-        return "\(pile) waiting. Even one counts."
+        if pile == 1 { return String(localized: "One thing. Even a small one.") }
+        return String(localized: "\(pile) waiting. Even one counts.")
     }
 }

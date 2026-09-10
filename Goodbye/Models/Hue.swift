@@ -66,3 +66,37 @@ enum Hue: String, CaseIterable, Identifiable {
         calendar.ordinality(of: .day, in: .era, for: day) ?? 0
     }
 }
+
+/// A handful of neutral shapes for the card on Today — plain containers, never a specific object,
+/// for the same reason `ItemCard` only ever draws one at a time: the app doesn't know what's
+/// leaving, so the shape can't claim to. Three shapes cycling mod 3 against Hue's mod 8 means the
+/// (colour, shape) pairing doesn't repeat for 24 days — the two feel independent, not paired.
+enum ItemSymbol: CaseIterable {
+    case box, cube, archive
+
+    var systemName: String {
+        switch self {
+        case .box: return "shippingbox"
+        case .cube: return "cube"
+        case .archive: return "archivebox"
+        }
+    }
+
+    static func forDay(_ day: Date, calendar: Calendar) -> ItemSymbol {
+        // Same debug override shape as Hue.forDay, for the same reason: otherwise the only way to
+        // see a shape besides today's is to wait.
+        //   SIMCTL_CHILD_GOODBYE_ITEM_SYMBOL=cube xcrun simctl launch <udid> com.jakubsuva.goodbye
+        #if DEBUG
+        if let pinned = ProcessInfo.processInfo.environment["GOODBYE_ITEM_SYMBOL"] {
+            switch pinned {
+            case "box": return .box
+            case "cube": return .cube
+            case "archive": return .archive
+            default: break
+            }
+        }
+        #endif
+        let all = ItemSymbol.allCases
+        return all[Hue.ordinal(of: day, calendar: calendar) % all.count]
+    }
+}

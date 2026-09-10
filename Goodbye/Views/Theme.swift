@@ -57,9 +57,20 @@ enum Theme {
     /// out maroon over the dark ground — the palette needs its own dark pass, not a switch.
     static let forcedColorScheme: ColorScheme? = .light
 
-    /// The app's copy is English, so its dates are too. Without this, `Date.FormatStyle` resolves
-    /// its template against the device locale and "Monday 7 September" comes out as "Monday 7. 9.".
-    static let dateLocale = Locale(identifier: "en_GB")
+    /// Region can disagree with language — a phone set to English with region Czechia
+    /// (`en_US@rg=czzzzz`) is a real, common combination — and under some regions `Date.FormatStyle`
+    /// silently drops a requested `.wide` month for a numeric one ("9. 9." instead of "September 9"),
+    /// the same failure mode a hard-coded English pin used to guard against. Deriving the locale
+    /// from the app's own resolved language (not the device region) keeps every date's field choices
+    /// reliable in whichever language the string catalog picked, without forcing English on readers
+    /// who chose something else.
+    static var dateLocale: Locale {
+        let language = Bundle.main.preferredLocalizations.first ?? "en"
+        // The copy is written in British English ("colour", "recolours"); bare "en" resolves to
+        // US conventions (month-day order, a comma before the day), so pin that one case to match
+        // the voice everywhere else. Every other language uses its own resolved code as-is.
+        return Locale(identifier: language == "en" ? "en_GB" : language)
+    }
 }
 
 /// Paints the ground: today's colour at the top drifting into tomorrow's at the foot.

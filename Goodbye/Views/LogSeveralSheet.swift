@@ -89,12 +89,14 @@ struct LogSeveralSheet: View {
 
     private var note: String {
         let remaining = pile - count
-        if remaining > 0 { return "\(remaining) will still be waiting." }
-        if remaining == 0 { return "That clears the queue." }
-        return "\(-remaining) more than the queue — they count toward your total, not toward next week."
+        if remaining > 0 { return String(localized: "\(remaining) will still be waiting.") }
+        if remaining == 0 { return String(localized: "That clears the queue.") }
+        return String(localized: "\(-remaining) more than the queue — they count toward your total, not toward next week.")
     }
 
-    private func stepButton(_ symbol: String, _ label: String, action: @escaping () -> Void) -> some View {
+    // LocalizedStringKey, not String, so the literal accessibility labels at the call site
+    // ("One fewer" / "One more") go through the normal localization lookup.
+    private func stepButton(_ symbol: String, _ label: LocalizedStringKey, action: @escaping () -> Void) -> some View {
         Button {
             withAnimation(.snappy) { action() }
         } label: {

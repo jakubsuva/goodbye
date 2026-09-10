@@ -40,7 +40,7 @@ struct HistoryView: View {
                 legend.padding(.top, 16)
 
                 // The residue of the decision: no streak, no debt, better every month.
-                Text("Started \(store.settings.startDate.formatted(.dateTime.day().month(.wide).year().locale(Theme.dateLocale)))")
+                Text("Started \(store.settings.startDate.formatted(.dateTime.day().month(.wide).year()))")
                     .font(Theme.text(.caption, .semibold))
                     .foregroundStyle(Theme.muted)
                     .frame(maxWidth: .infinity)
@@ -64,15 +64,16 @@ struct HistoryView: View {
     }
 
     private func statsLine(_ ledger: Ledger) -> String {
-        let things = "\(ledger.total) gone"
-        return ledger.pile == 0 ? "\(things) · caught up" : "\(things) · \(ledger.pile) in the queue"
+        let things = String(localized: "\(ledger.total) gone")
+        if ledger.pile == 0 { return String(localized: "\(things) · caught up") }
+        return String(localized: "\(things) · \(ledger.pile) in the queue")
     }
 
     private func gridSummary(_ year: [DueDay]) -> String {
         let done = year.filter { $0.state == .done }.count
         let owed = year.filter { $0.state == .owed }.count
         let ahead = year.filter { $0.state == .future }.count
-        return "Your first year: \(done) days done, \(owed) owed, \(ahead) still ahead."
+        return String(localized: "Your first year: \(done) days done, \(owed) owed, \(ahead) still ahead.")
     }
 
     private var legend: some View {
@@ -85,7 +86,7 @@ struct HistoryView: View {
         .foregroundStyle(Theme.muted)
     }
 
-    private func legendItem(_ state: DueDay.State, _ label: String) -> some View {
+    private func legendItem(_ state: DueDay.State, _ label: LocalizedStringKey) -> some View {
         HStack(spacing: 5) {
             DayCell(state: state).accessibilityHidden(true)
             Text(label)

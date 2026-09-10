@@ -90,12 +90,46 @@ short-circuits the system lookup. Reinstating it means setting that to `nil`, bu
 (especially the warm hues) was tuned against a white ground and reads muddy on the current dark
 variants — treat that as a design pass, not a flag flip.
 
+### Localization
+
+The app is localized via `Goodbye/Localizable.xcstrings` (a String Catalog — no `.lproj` files to
+maintain by hand). As of this writing it carries German (`de`) alongside the English source; the
+rest of a once-generated 7-language set (cs/es/fr/it/nl/pl) is intentionally not wired in yet and
+sits in a scratch translations file from that session, added back the same way if wanted.
+
+SwiftUI only auto-extracts and looks up a string as a catalog key when a **string literal** is
+passed directly to a `LocalizedStringKey`-typed parameter (`Text("literal")`, `Button("literal")`,
+`.accessibilityLabel("literal")`, a ternary of two literals). The moment a literal is assigned to an
+intermediate `String`-typed property or parameter first (`Rhythm.counsel`, `Tally.sentence(for:)`,
+`SuggestionBank.lines`, `TodayView.closing`/`backLine`, a `String` parameter later handed to
+`Text(_:)`), that chain of custody is broken — `Text(someString)` renders it **verbatim**, never
+localized, with no warning at compile time or runtime. The fix used throughout this codebase is
+`NSLocalizedString(_:comment:)` or `String(localized:)` (the latter for anything with interpolation,
+since its `%@`/`%lld`-style key generation matches what SwiftUI's own literal extraction produces —
+confirmed empirically via `xcodebuild -exportLocalizations`, not assumed) at the point the `String`
+is produced, and changing reusable component parameters (`HoldButton.title`, `LogSeveralSheet`'s
+`stepButton` label, `HistoryView`'s `legendItem` label) from `String` to `LocalizedStringKey` so a
+literal passed at their call site survives intact. Before adding a new user-facing string, check
+which category it falls into — `xcodebuild -exportLocalizations -localizationPath /tmp/x -project
+Goodbye.xcodeproj` and grepping the resulting `.xliff` is the fastest way to confirm a given string
+actually made it into the extracted key set.
+
+Two things are deliberately **not** run through the catalog: the app's own name ("Goodbye", both as
+the bundle display name and the notification title) stays the same word in every language, and
+`Rhythm.title` vs `Rhythm.phrase` intentionally hold two different English source strings for the
+same concept (title-case for the Settings picker, sentence-case to complete the onboarding
+sentence) — each needs its own translation per language, not one reused.
+
 ### Two recurring `Text`/date gotchas
 
 - `Text(date, format:)` resolves the format style's locale from the **environment**, not from a
-  `.locale()` call on the style itself — `GoodbyeApp.swift` pins
-  `.environment(\.locale, Theme.dateLocale)` at the root for this reason. A locale bug here isn't
-  fixed by chasing `.locale()` at the call site.
+  `.locale()` call on the style itself — `GoodbyeApp.swift` pins `.environment(\.locale,
+  Theme.dateLocale)` at the root for this reason, and `Theme.dateLocale` is derived from
+  `Bundle.main.preferredLocalizations.first` (the app's own resolved language), not hard-coded —
+  see the doc comment on `Theme.dateLocale` for why: device **region** can disagree with language
+  (`en_US@rg=czzzzz` is a real, reproducible combination on this very simulator) and silently
+  degrades a requested `.wide` month to a numeric one otherwise. A locale bug here isn't fixed by
+  chasing `.locale()` at the call site.
 - An `Int` interpolated directly into a `Text` (e.g. a year) picks up the user's grouping separator
   ("2 027"). `OnboardingView.projection` works around it with `.formatted(.number.grouping(.never))`
   — reuse that pattern for any other bare year/count interpolated into `Text`.

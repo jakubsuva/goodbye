@@ -1,0 +1,1236 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    " gone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " weg"
+          }
+        }
+      }
+    },
+    " things gone by %1$@ %2$@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " Dinge weg bis %1$@ %2$@."
+          }
+        }
+      }
+    },
+    "%1$@ · %2$lld in the queue": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$lld in der Warteschlange"
+          }
+        }
+      }
+    },
+    "%@ · caught up": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · alles erledigt"
+          }
+        }
+      }
+    },
+    "%lld": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
+        }
+      }
+    },
+    "%lld gone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld weg"
+          }
+        }
+      }
+    },
+    "%lld gone.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld weg."
+          }
+        }
+      }
+    },
+    "%lld in the queue": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld in der Warteschlange"
+          }
+        }
+      }
+    },
+    "%lld in the queue.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld in der Warteschlange."
+          }
+        }
+      }
+    },
+    "%lld more than the queue — they count toward your total, not toward next week.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mehr als die Warteschlange — das zählt zu deiner Gesamtzahl, nicht zur nächsten Woche."
+          }
+        }
+      }
+    },
+    "%lld waiting. Even one counts.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld warten. Auch eins zählt."
+          }
+        }
+      }
+    },
+    "%lld will still be waiting.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld warten dann noch."
+          }
+        }
+      }
+    },
+    "365 is a lot. Start slower — speeding up is easy, starting again isn't.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "365 sind viele. Fang langsamer an — schneller werden ist leicht, neu anfangen nicht."
+          }
+        }
+      }
+    },
+    "A hundred. The flat is lighter than the one you started in.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hundert. Die Wohnung ist leichter als die, in der du angefangen hast."
+          }
+        }
+      }
+    },
+    "A thousand things, and not one you miss.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tausend Dinge, und keins davon fehlt dir."
+          }
+        }
+      }
+    },
+    "All %lld": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle %lld"
+          }
+        }
+      }
+    },
+    "All clear": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles erledigt"
+          }
+        }
+      }
+    },
+    "All clear.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles erledigt."
+          }
+        }
+      }
+    },
+    "Another suggestion": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anderer Vorschlag"
+          }
+        }
+      }
+    },
+    "Counting from": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zählt ab"
+          }
+        }
+      }
+    },
+    "Daily reminder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tägliche Erinnerung"
+          }
+        }
+      }
+    },
+    "Double tap to let one go": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doppeltippen, um eins loszulassen"
+          }
+        }
+      }
+    },
+    "Drag it out — or tap the button": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zieh es raus — oder tippe den Button"
+          }
+        }
+      }
+    },
+    "Due days are counted from this date. Changing it recolours History; nothing is lost.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fällige Tage werden ab diesem Datum gezählt. Eine Änderung färbt nur den Verlauf um; nichts geht verloren."
+          }
+        }
+      }
+    },
+    "Enough to notice. Rare enough to keep.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genug, um es zu bemerken. Selten genug, um dranzubleiben."
+          }
+        }
+      }
+    },
+    "Every day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeden Tag"
+          }
+        }
+      }
+    },
+    "Every other day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeden zweiten Tag"
+          }
+        }
+      }
+    },
+    "Export data (JSON)": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daten exportieren (JSON)"
+          }
+        }
+      }
+    },
+    "Fifty. That's a shelf you never have to dust.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fünfzig. Das ist ein Regal, das du nie wieder abstauben musst."
+          }
+        }
+      }
+    },
+    "Five hundred things you don't miss.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fünfhundert Dinge, die dir nicht fehlen."
+          }
+        }
+      }
+    },
+    "Gentle. The same day each week adds up anyway.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sanft. Derselbe Tag jede Woche summiert sich trotzdem."
+          }
+        }
+      }
+    },
+    "Gone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weg"
+          }
+        }
+      }
+    },
+    "Gone ×%lld": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weg ×%lld"
+          }
+        }
+      }
+    },
+    "Had a big clear-out? Log them at once": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Großer Ausmist-Tag gehabt? Trag sie alle auf einmal ein"
+          }
+        }
+      }
+    },
+    "History": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf"
+          }
+        }
+      }
+    },
+    "Hold it for a second.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halte es kurz gedrückt."
+          }
+        }
+      }
+    },
+    "Hold to start": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halten zum Starten"
+          }
+        }
+      }
+    },
+    "How many went?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie viele sind weg?"
+          }
+        }
+      }
+    },
+    "Miss a few days and they wait for you — clear them one at a time, or all at once.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verpasst du ein paar Tage, warten sie auf dich — räum sie einzeln ab oder alle auf einmal."
+          }
+        }
+      }
+    },
+    "Missed days wait for you, and clearing them fills them in.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verpasste Tage warten auf dich, und sie abzuarbeiten füllt sie auf."
+          }
+        }
+      }
+    },
+    "No reminder": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Erinnerung"
+          }
+        }
+      }
+    },
+    "Not sure? ": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unsicher? "
+          }
+        }
+      }
+    },
+    "Nudge": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erinnerung"
+          }
+        }
+      }
+    },
+    "Nudge me at": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erinnere mich um"
+          }
+        }
+      }
+    },
+    "Once a week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einmal die Woche"
+          }
+        }
+      }
+    },
+    "One a day, only while something is waiting.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eins am Tag, nur solange etwas wartet."
+          }
+        }
+      }
+    },
+    "One fewer": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eins weniger"
+          }
+        }
+      }
+    },
+    "One gone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eins weg"
+          }
+        }
+      }
+    },
+    "One more": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch eins"
+          }
+        }
+      }
+    },
+    "One thing leaves your life…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Sache verlässt dein Leben…"
+          }
+        }
+      }
+    },
+    "One thing to let go of": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Sache zum Loslassen"
+          }
+        }
+      }
+    },
+    "One thing. Even a small one.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Sache. Auch eine kleine."
+          }
+        }
+      }
+    },
+    "One thing. How about %@?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Sache. Wie wäre es mit %@?"
+          }
+        }
+      }
+    },
+    "Pick a rhythm. You can change it whenever.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle einen Rhythmus. Du kannst ihn jederzeit ändern."
+          }
+        }
+      }
+    },
+    "Press and hold to begin": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Starten gedrückt halten"
+          }
+        }
+      }
+    },
+    "Rhythm": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rhythmus"
+          }
+        }
+      }
+    },
+    "See you %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bis %@."
+          }
+        }
+      }
+    },
+    "See you on %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bis zum %@."
+          }
+        }
+      }
+    },
+    "See you tomorrow.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bis morgen."
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        }
+      }
+    },
+    "Started %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestartet am %@"
+          }
+        }
+      }
+    },
+    "Suggestions": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschläge"
+          }
+        }
+      }
+    },
+    "Ten. It's a habit now.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zehn. Jetzt ist es eine Gewohnheit."
+          }
+        }
+      }
+    },
+    "That clears the queue.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Damit ist die Warteschlange leer."
+          }
+        }
+      }
+    },
+    "Time": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uhrzeit"
+          }
+        }
+      }
+    },
+    "Twice a week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zweimal die Woche"
+          }
+        }
+      }
+    },
+    "Two evenings a week, always the same two.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zwei Abende die Woche, immer dieselben zwei."
+          }
+        }
+      }
+    },
+    "Two hundred and fifty. A cupboard, cleared.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zweihundertfünfzig. Ein Schrank, geräumt."
+          }
+        }
+      }
+    },
+    "Undo": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rückgängig"
+          }
+        }
+      }
+    },
+    "Version": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
+        }
+      }
+    },
+    "Who's leaving today?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Was verlässt uns heute?"
+          }
+        }
+      }
+    },
+    "Your first year: %1$lld days done, %2$lld owed, %3$lld still ahead.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein erstes Jahr: %1$lld Tage erledigt, %2$lld fällig, %3$lld noch voraus."
+          }
+        }
+      }
+    },
+    "a browser tab you've kept open for a month": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Browser-Tab, den du seit einem Monat offen hast"
+          }
+        }
+      }
+    },
+    "a cable with nothing to plug into": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Kabel ohne Gerät dafür"
+          }
+        }
+      }
+    },
+    "a dead battery kept “to recycle later”": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eine leere Batterie, aufgehoben „zum späteren Recyceln“"
+          }
+        }
+      }
+    },
+    "a favour you keep meaning to ask for and never will": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Gefallen, um den du ständig bitten willst und es nie tust"
+          }
+        }
+      }
+    },
+    "a folder on your desktop called “stuff”": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Ordner auf dem Desktop namens „Kram“"
+          }
+        }
+      }
+    },
+    "a group chat you've had muted since last year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Gruppenchat, den du seit letztem Jahr stummgeschaltet hast"
+          }
+        }
+      }
+    },
+    "a login for a service that no longer exists": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Login für einen Dienst, den es nicht mehr gibt"
+          }
+        }
+      }
+    },
+    "a newsletter you never read": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Newsletter, den du nie liest"
+          }
+        }
+      }
+    },
+    "a photo of a screenshot of a receipt": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Foto von einem Screenshot einer Quittung"
+          }
+        }
+      }
+    },
+    "a plan you agreed to and have been dreading since": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Plan, dem du zugestimmt hast und dich seitdem davor fürchtest"
+          }
+        }
+      }
+    },
+    "a receipt for something you can't return anymore": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Kassenbon für etwas, das du nicht mehr zurückgeben kannst"
+          }
+        }
+      }
+    },
+    "a spice you can't remember buying": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Gewürz, an dessen Kauf du dich nicht erinnerst"
+          }
+        }
+      }
+    },
+    "a subscription you forgot you were paying for": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ein Abo, von dem du vergessen hast, dass du es zahlst"
+          }
+        }
+      }
+    },
+    "ahead": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "voraus"
+          }
+        }
+      }
+    },
+    "an app you haven't opened since spring": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eine App, die du seit dem Frühling nicht mehr geöffnet hast"
+          }
+        }
+      }
+    },
+    "done": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "erledigt"
+          }
+        }
+      }
+    },
+    "earphones that only play on one side": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopfhörer, die nur auf einer Seite Ton haben"
+          }
+        }
+      }
+    },
+    "every day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jeden Tag"
+          }
+        }
+      }
+    },
+    "every other day": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jeden zweiten Tag"
+          }
+        }
+      }
+    },
+    "once a week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "einmal die Woche"
+          }
+        }
+      }
+    },
+    "owed": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fällig"
+          }
+        }
+      }
+    },
+    "the T-shirt you haven't worn in a year": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "das T-Shirt, das du seit einem Jahr nicht mehr getragen hast"
+          }
+        }
+      }
+    },
+    "the bottle opener — the other one": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Flaschenöffner — der andere"
+          }
+        }
+      }
+    },
+    "the box from an appliance you've had three years": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Karton von einem Gerät, das du seit drei Jahren hast"
+          }
+        }
+      }
+    },
+    "the box the headphones came in": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Verpackung der Kopfhörer"
+          }
+        }
+      }
+    },
+    "the charger for a phone you sold": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "das Ladekabel für ein Handy, das du verkauft hast"
+          }
+        }
+      }
+    },
+    "the fourth USB-A charger": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "das vierte USB-A-Ladekabel"
+          }
+        }
+      }
+    },
+    "the jar you kept for “something”": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "das Glas, das du für „irgendwas“ aufgehoben hast"
+          }
+        }
+      }
+    },
+    "the jeans that will fit again “someday”": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Jeans, die dir „irgendwann“ wieder passen"
+          }
+        }
+      }
+    },
+    "the key to a lock you no longer have": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Schlüssel zu einem Schloss, das du nicht mehr hast"
+          }
+        }
+      }
+    },
+    "the manual for the kettle you replaced": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Anleitung für den Wasserkocher, den du ersetzt hast"
+          }
+        }
+      }
+    },
+    "the notebook with three pages used": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "das Notizbuch mit drei beschriebenen Seiten"
+          }
+        }
+      }
+    },
+    "the paint tin from a wall that's since been repainted": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Farbdose von einer Wand, die längst neu gestrichen ist"
+          }
+        }
+      }
+    },
+    "the pan whose handle wobbles": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Pfanne mit dem wackligen Griff"
+          }
+        }
+      }
+    },
+    "the pen that has to be shaken to write": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Stift, den du schütteln musst, damit er schreibt"
+          }
+        }
+      }
+    },
+    "the phone box — the warranty is in your email": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Handy-Verpackung — die Garantie ist in deiner E-Mail"
+          }
+        }
+      }
+    },
+    "the plant pot with the crack": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Blumentopf mit dem Riss"
+          }
+        }
+      }
+    },
+    "the razor that stopped being sharp in spring": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Rasierer, der schon im Frühling stumpf wurde"
+          }
+        }
+      }
+    },
+    "the sample-size cream you're saving for a trip": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Proben-Creme, die du dir für eine Reise aufhebst"
+          }
+        }
+      }
+    },
+    "the scarf someone meant well with": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Schal, den dir jemand gut gemeint geschenkt hat"
+          }
+        }
+      }
+    },
+    "the shoes that “will break in”": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Schuhe, die sich „noch einlaufen“"
+          }
+        }
+      }
+    },
+    "the sock without its other half": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Socke ohne ihre andere Hälfte"
+          }
+        }
+      }
+    },
+    "the spare tote bag under the other spare tote bags": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Ersatz-Stofftasche unter den anderen Ersatz-Stofftaschen"
+          }
+        }
+      }
+    },
+    "the stack of conference lanyards": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Stapel Konferenz-Lanyards"
+          }
+        }
+      }
+    },
+    "the sunscreen from two summers ago": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Sonnencreme von vor zwei Sommern"
+          }
+        }
+      }
+    },
+    "the takeaway chopsticks in the drawer": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Einweg-Stäbchen vom Lieferdienst in der Schublade"
+          }
+        }
+      }
+    },
+    "the takeaway menu from a place that closed": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die Speisekarte von dem Lieferservice, den's nicht mehr gibt"
+          }
+        }
+      }
+    },
+    "the third hairbrush": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die dritte Haarbürste"
+          }
+        }
+      }
+    },
+    "the third pan": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "die dritte Pfanne"
+          }
+        }
+      }
+    },
+    "the umbrella that doesn't quite open": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "der Regenschirm, der nicht ganz aufgeht"
+          }
+        }
+      }
+    },
+    "twice a week": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "zweimal die Woche"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

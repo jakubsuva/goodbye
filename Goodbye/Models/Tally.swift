@@ -20,12 +20,12 @@ enum Tally {
 
     static func sentence(for milestone: Int) -> String {
         switch milestone {
-        case 10: return "Ten. It's a habit now."
-        case 50: return "Fifty. That's a shelf you never have to dust."
-        case 100: return "A hundred. The flat is lighter than the one you started in."
-        case 250: return "Two hundred and fifty. A cupboard, cleared."
-        case 500: return "Five hundred things you don't miss."
-        case 1000: return "A thousand things, and not one you miss."
+        case 10: return NSLocalizedString("Ten. It's a habit now.", comment: "Milestone: 10 things gone")
+        case 50: return NSLocalizedString("Fifty. That's a shelf you never have to dust.", comment: "Milestone: 50 things gone")
+        case 100: return NSLocalizedString("A hundred. The flat is lighter than the one you started in.", comment: "Milestone: 100 things gone")
+        case 250: return NSLocalizedString("Two hundred and fifty. A cupboard, cleared.", comment: "Milestone: 250 things gone")
+        case 500: return NSLocalizedString("Five hundred things you don't miss.", comment: "Milestone: 500 things gone")
+        case 1000: return NSLocalizedString("A thousand things, and not one you miss.", comment: "Milestone: 1000 things gone")
         default: return "\(milestone)."
         }
     }

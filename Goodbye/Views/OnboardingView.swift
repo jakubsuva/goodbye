@@ -137,7 +137,7 @@ struct OnboardingView: View {
         // A year interpolated as an Int picks up a grouping separator — "September 2 027".
         let year = (store.calendar.component(.year, from: Date()) + 1)
             .formatted(.number.grouping(.never))
-        let month = Date().formatted(.dateTime.month(.wide).locale(Theme.dateLocale))
+        let month = Date().formatted(.dateTime.month(.wide))
         return (Text("\(rhythm.yearlyCount)").foregroundStyle(hue.deep)
             + Text(" things gone by \(month) \(year).").foregroundStyle(Theme.ink))
             .font(Theme.text(.title3, .heavy))

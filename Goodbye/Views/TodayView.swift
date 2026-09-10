@@ -79,7 +79,7 @@ struct TodayView: View {
 
             // Centred in what's left, so the void splits into two small gaps instead of one big one.
             VStack(spacing: 12) {
-                ItemCard(hue: hue, pile: pile)
+                ItemCard(hue: hue, symbol: ItemSymbol.forDay(store.now, calendar: store.calendar), pile: pile)
                     .offset(dragOffset)
                     .rotationEffect(.degrees(dragOffset.height * 0.12))
                     .opacity(isTossing ? 0 : 1)
@@ -196,8 +196,8 @@ struct TodayView: View {
 
     /// The app's own name is what it says when you're done — but only on a day you did something.
     private var closing: String {
-        guard store.didLogToday else { return "Nothing due today.\n\(backLine)" }
-        return "Goodbye.\n\(backLine)"
+        guard store.didLogToday else { return String(localized: "Nothing due today.\n\(backLine)") }
+        return String(localized: "Goodbye.\n\(backLine)")
     }
 
     /// “See you Wednesday.” — when the app will ask again.
@@ -209,9 +209,9 @@ struct TodayView: View {
         let days = store.calendar.dateComponents(
             [.day], from: store.calendar.startOfDay(for: store.now), to: next
         ).day ?? 0
-        if days == 1 { return "See you tomorrow." }
-        if days < 7 { return "See you \(next.formatted(.dateTime.weekday(.wide).locale(Theme.dateLocale)))." }
-        return "See you on \(next.formatted(.dateTime.day().month(.wide).locale(Theme.dateLocale)))."
+        if days == 1 { return String(localized: "See you tomorrow.") }
+        if days < 7 { return String(localized: "See you \(next.formatted(.dateTime.weekday(.wide))).") }
+        return String(localized: "See you on \(next.formatted(.dateTime.day().month(.wide))).")
     }
 
     private var currentLine: String {

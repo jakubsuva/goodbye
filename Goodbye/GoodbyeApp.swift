@@ -19,9 +19,9 @@ struct GoodbyeApp: App {
             RootView()
                 .environment(store)
                 // SwiftUI overrides a format style's own locale with the environment's for
-                // `Text(date, format:)`, so pinning it per call site silently did nothing. The
-                // app's copy is English; this makes its dates English too, on a phone set to
-                // any region. (Without it, en_US@rg=czzzzz renders "Monday 7. 9.")
+                // `Text(date, format:)`, so pinning per call site does nothing — see
+                // Theme.dateLocale. Derived from the app's resolved language, not hard-coded, so
+                // this keeps working now that the app is localized rather than English-only.
                 .environment(\.locale, Theme.dateLocale)
                 // Parked, not removed — see Theme.forcedColorScheme.
                 .preferredColorScheme(Theme.forcedColorScheme)

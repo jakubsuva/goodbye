@@ -15,20 +15,20 @@ enum Rhythm: String, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .daily: return "Every day"
-        case .everyOtherDay: return "Every other day"
-        case .twiceAWeek: return "Twice a week"
-        case .weekly: return "Once a week"
+        case .daily: return NSLocalizedString("Every day", comment: "Rhythm option, Settings picker")
+        case .everyOtherDay: return NSLocalizedString("Every other day", comment: "Rhythm option, Settings picker")
+        case .twiceAWeek: return NSLocalizedString("Twice a week", comment: "Rhythm option, Settings picker")
+        case .weekly: return NSLocalizedString("Once a week", comment: "Rhythm option, Settings picker")
         }
     }
 
     /// Lower case, because in onboarding these complete the sentence “One thing leaves the flat…”.
     var phrase: String {
         switch self {
-        case .daily: return "every day"
-        case .everyOtherDay: return "every other day"
-        case .twiceAWeek: return "twice a week"
-        case .weekly: return "once a week"
+        case .daily: return NSLocalizedString("every day", comment: "Rhythm option, completes a sentence")
+        case .everyOtherDay: return NSLocalizedString("every other day", comment: "Rhythm option, completes a sentence")
+        case .twiceAWeek: return NSLocalizedString("twice a week", comment: "Rhythm option, completes a sentence")
+        case .weekly: return NSLocalizedString("once a week", comment: "Rhythm option, completes a sentence")
         }
     }
 
@@ -49,10 +49,26 @@ enum Rhythm: String, Codable, CaseIterable, Identifiable {
     /// a broken run on day four is how this habit actually dies.
     var counsel: String {
         switch self {
-        case .daily: return "365 is a lot. Start slower — speeding up is easy, starting again isn't."
-        case .everyOtherDay: return "Enough to notice. Rare enough to keep."
-        case .twiceAWeek: return "Two evenings a week, always the same two."
-        case .weekly: return "Gentle. The same day each week adds up anyway."
+        case .daily:
+            return NSLocalizedString(
+                "365 is a lot. Start slower — speeding up is easy, starting again isn't.",
+                comment: "Counsel under the daily rhythm option"
+            )
+        case .everyOtherDay:
+            return NSLocalizedString(
+                "Enough to notice. Rare enough to keep.",
+                comment: "Counsel under the every-other-day rhythm option"
+            )
+        case .twiceAWeek:
+            return NSLocalizedString(
+                "Two evenings a week, always the same two.",
+                comment: "Counsel under the twice-a-week rhythm option"
+            )
+        case .weekly:
+            return NSLocalizedString(
+                "Gentle. The same day each week adds up anyway.",
+                comment: "Counsel under the weekly rhythm option"
+            )
         }
     }
 

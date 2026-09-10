@@ -60,8 +60,11 @@ enum SuggestionBank {
     ]
 
     /// Today's lines, rotated so the first one changes daily and the refresh walks on from there.
+    /// Localized here, once, so every caller (the Today screen, the reminder notification) gets
+    /// translated text without having to know these started life as English literals.
     static func lines(for day: Date, calendar: Calendar) -> [String] {
         let k = Hue.ordinal(of: day, calendar: calendar) % lines.count
-        return Array(lines[k...] + lines[..<k])
+        let rotated = Array(lines[k...] + lines[..<k])
+        return rotated.map { NSLocalizedString($0, comment: "Suggestion line") }
     }
 }
